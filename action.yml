@@ -1,0 +1,23 @@
+name: 'Publish MODX Extra to modstore.pro'
+description: 'GitHub Action for publishing new versions of MODX extras in modstore.pro marketplace'
+author: 'Ivan Klimchuk'
+
+branding:
+  icon: 'edit'
+  color: 'red'
+
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+
+outputs:
+  time:
+    description: 'The time we greeted you'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
